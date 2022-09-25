@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import ItemCard from "./components/ItemCard";
+import axios from "axios";
+import "./App.css";
+export default function App() {
+  const [menu, setMenu] = useState([]);
 
-function App() {
+  useEffect(() => {
+    axios.get("data.json").then((res) => {
+      setMenu(res.data);
+    });
+  }, []);
+
+  useEffect(() => {}, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="cotainer">
+      <div style={{ display: "flex", flex: "1", alignSelf: "center" }}>
+        <h1>Order Takeouts</h1>
+      </div>
+
+      {menu.map((item, index) => (
+        <ItemCard
+          item_name={item.item_name}
+          item_img={item.item_img}
+          price={item.price}
+          key={index}
+        />
+      ))}
     </div>
   );
 }
-
-export default App;

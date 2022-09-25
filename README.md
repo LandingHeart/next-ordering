@@ -5,7 +5,7 @@ install node if not intalled https://nodejs.org/en/download/
 ```bash
 
 cd next-ordering
-git clone https://github.com/LandingHeart/next-order-live-app.git
+git clone https://github.com/LandingHeart/next-ordering.git
 npm install
 
 ```

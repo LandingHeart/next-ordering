@@ -3,6 +3,7 @@
 
 # installation instruction
 
+
 install node if not intalled https://nodejs.org/en/download/
 
 ```bash
@@ -10,6 +11,7 @@ install node if not intalled https://nodejs.org/en/download/
 git clone https://github.com/LandingHeart/next-ordering.git
 cd next-ordering
 npm install
+npm start
 
 ```
 
